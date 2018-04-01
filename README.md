@@ -24,8 +24,7 @@ And ... you can do the calculations of the sensor data also without the graphica
 <img src="docu/ESP_MPU_wiring.jpg" alt="Wiring" width="700" />
 <br>
 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v7h3vT5ku6k?rel=0" 
- frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![PLAY](https://img.youtube.com/vi/v7h3vT5ku6k/0.jpg)](https://www.youtube.com/watch?v=v7h3vT5ku6k)
 </div>
  
 ## Sensor fusion theory basics
