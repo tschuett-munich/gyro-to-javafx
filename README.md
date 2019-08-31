@@ -48,17 +48,16 @@ These shortcomings are largely improved by the SW given here.
 
 ## Summary of the sensor fusion theory
 
-The gyro readings have drift. So the robot orientation that was calculated on them need some 
+The **gyroscope values** have drift. So the robot orientation that was calculated on them need some 
 correction now and then. (Another reason, why these rotations will always
-add up with some error, is the the fact, that applying the rotations must actually happen
-simultaniously, and not one by one.)
+add up with some error, is the the fact, that applying the three dimensions (x,y,z) of each rotation must actually happen
+somehow simultaniously, and not one after the other. Different ordering gives slightly different results!)
 
-On the other hand, the accelerometer (and the tilt values derived from them) are unrestfull even during
+On the other hand, the **accelerometer values** (and the tilt values derived from them) are unrestfull even during
 no-movement phases, and can not be used at all during stronger movement. 
-But they can be used for orientation correction now and then.
+But they can be smoothed and then be used for orientation corrections now and then.
 
-So we have to find clever ways to combine those two data. The result will be a hopefully good estimate 
-of the robot orientation. 
+So we have to find clever ways to combine those two data sources. The result will be a hopefully good estimate of the robot orientation. 
 
 The two main classes for this computation are `RotationTracker.java` and `TiltCollector.java`.
 
@@ -88,4 +87,4 @@ sensor movements.
 
 ### Why UDP?
 
-With TCP I excerienced some timing problems where communication freezed for 50 ms now and then. That is why I switched to UDP.
+With TCP I experienced some timing problems where communication freezed for 50 ms on a regular basis (each 2 seconds or so). That is why I switched to UDP.
